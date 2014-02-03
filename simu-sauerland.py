@@ -295,7 +295,7 @@ points = [
     { "lat" : "51.199332421", "lon":"8.887337328" },
 ]
 
-topic = 'mqttitude/sim/sauer'
+topic = 'owntracks/sim/sauer'
 
 mqttc = mosquitto.Mosquitto(clean_session=True)
 mqttc.connect("localhost", 1883, 60)

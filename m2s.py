@@ -166,7 +166,7 @@ def on_message(mosq, userdata, msg):
         print "Skipping topic %s: lat or lon are None" % (topic)
         return
 
-    # Split topic up into bits. Standard formula is "mqttitude/username/device"
+    # Split topic up into bits. Standard formula is "owntracks/username/device"
     # so we do that here: modify to taste
 
     try:

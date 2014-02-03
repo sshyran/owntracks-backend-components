@@ -63,7 +63,7 @@ def main(argv):
     
     root = ET.Element('gpx')
     root.set('version', '1.0')
-    root.set('creator', 'MQTTitude GPX Exporter')
+    root.set('creator', 'OwnTracks GPX Exporter')
     root.set('xmlns', "http://www.topografix.com/GPX/1/0")
     root.append(Comment('Hi JP'))
 

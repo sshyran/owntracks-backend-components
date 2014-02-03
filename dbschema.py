@@ -6,7 +6,7 @@ import datetime
 
 cf = Config()
 
-mysql_db = MySQLDatabase(cf.get('dbname', 'mqttitude'),
+mysql_db = MySQLDatabase(cf.get('dbname', 'owntracks'),
     user=cf.get('dbuser'),
     passwd=cf.get('dbpasswd'),
     threadlocals=True)

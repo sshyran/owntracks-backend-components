@@ -15,7 +15,7 @@ mqtt_clientid = 'm2s-backend'   # MUST be set
 
 # List of topics we should subscribe to
 topics = [
-        'mqttitude/+/+',
+        'owntracks/+/+',
         'foo/bar'
     ]
 
@@ -27,7 +27,7 @@ topics = [
 # Storage
 
 storage_plugin = 'storage.py'
-dbname = 'mqttitude'          # default: "mqttitude"
+dbname = 'owntracks'          # default: "owntracks"
 dbuser = 'username'
 dbpasswd = 'password'
 

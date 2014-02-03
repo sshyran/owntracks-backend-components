@@ -5,7 +5,7 @@ from dbschema import Location, mysql_db
 def storage(topic, item):
     """
     Storage plugin for m2s. The function signature MUST match the
-    above. `topic' contains the message topic (e.g. "mqttitude/jpm/nexus")
+    above. `topic' contains the message topic (e.g. "owntracks/jpm/nexus")
     and `item' is a dict which contains the rest of the data (including
     weather and reverse geo-coding information if requested)
 
