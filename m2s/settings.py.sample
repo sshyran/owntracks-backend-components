@@ -16,6 +16,7 @@ mqtt_clientid = 'm2s-backend'   # MUST be set
 # List of topics we should subscribe to
 topics = [
         'owntracks/+/+',
+        'mqttitude/+/+',
         'foo/bar'
     ]
 
