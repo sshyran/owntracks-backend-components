@@ -3,8 +3,13 @@
 from peewee import *
 from config import Config
 import datetime
+import sys
 
-cf = Config()
+try:
+    cf = Config()
+except Exception, e:
+    print "Can't load configuration: %s" % (str(e))
+    sys.exit(1)
 
 mysql_db = MySQLDatabase(cf.get('dbname', 'owntracks'),
     user=cf.get('dbuser'),
@@ -53,12 +58,12 @@ if __name__ == '__main__':
     mysql_db.connect()
 
     try:
-        Location.create_table()
+        Location.create_table(fail_silently=True)
     except Exception, e:
         print str(e)
 
     try:
-        Waypoint.create_table()
+        Waypoint.create_table(fail_silently=True)
     except Exception, e:
         print str(e)
 
