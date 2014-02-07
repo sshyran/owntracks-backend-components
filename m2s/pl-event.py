@@ -18,11 +18,11 @@ def plugin(item, m2s=None):
         username = item['username']
         device   = item['device']
         desc     = item.get('desc', 'wp-unknown')
-        event    = item.get('event', None)
+        event    = item['event']
     except:
         return (None, None)
 
-    if _type != 'location':
+    if _type != 'location' or event is None:
         return (None, None)
 
     payload = "{username} ({device}) => {event}: {desc} at {timestr}".format(
