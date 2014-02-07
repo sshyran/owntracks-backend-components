@@ -56,4 +56,5 @@ plugin_configs = {
 	"republish_users" : [ 'john', ],
 	"republish_devices" : [ 'iphone', 'nexus', ],
 	"name" : "JP Mens",
+    "event_notifications" : "home/events/owntracks",
 }
