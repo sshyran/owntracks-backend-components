@@ -15,8 +15,8 @@ def plugin(item, m2s=None):
         _type    = item['_type']
         tst      = item['tst']
         timestr  = time.strftime('%H:%M', time.localtime(int(tst)))
-        username = item['username']
-        device   = item['device']
+        username = item.get('username', 'unknown')
+        device   = item.get('device', 'unknown')
         desc     = item.get('desc', 'wp-unknown')
         event    = item['event']
     except:
@@ -35,7 +35,7 @@ def plugin(item, m2s=None):
 
 
     try:
-        topic = m2s.cf.event_notifications
+        topic = "%s/%s/%s" % (m2s.cf.event_notifications, username, device)
         m2s.info("notify event at %s: %s" % (topic, payload))
         m2s.publish(topic, payload, qos=0, retain=False)
     except:
