@@ -3,7 +3,7 @@
 
 # Sundry
 
-logfile	= 'logfile'		
+logfile  = 'logfile'
 
 # Broker
 
@@ -52,9 +52,16 @@ data_plugins = [
 # 'republish_users', 'republish_devices'
 
 plugin_configs = {
-	"republish_topic" : "local/loca",
-	"republish_users" : [ 'john', ],
-	"republish_devices" : [ 'iphone', 'nexus', ],
-	"name" : "JP Mens",
+    "republish_topic" : "local/loca",
+    "republish_users" : [ 'john', ],
+    "republish_devices" : [ 'iphone', 'nexus', ],
+    "name" : "JP Mens",
     "event_notifications" : "home/events/owntracks",
+
+    # Format strings for pl-replublish plugin
+    # these default to the examples given
+    # 'republish_location_fmt' : '{username}-{device} {timestr} ({weather}) http://maps.google.com/?q={lat},{lon} ({acc}) {address}',
+    # 'republish_event_fmt'    : '{username}-{device} {timestr} => {event} {waypoint} ({weather})',
+    # 'republish_waypoint_fmt' : '{username}-{device} {timestr} Waypoint: {waypoint} ({rad}) {lat}/{lon}',
+
 }

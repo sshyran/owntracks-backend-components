@@ -52,12 +52,18 @@ def plugin(item, m2s=None):
 
     if _type == 'location':
 
-        fmt = u'{username}-{device} {timestr} ({weather}) http://maps.google.com/?q={lat},{lon} ({acc}) {address}'
+        fmt = m2s.cf.republish_location_fmt
+        if fmt is None:
+            fmt = u'{username}-{device} {timestr} ({weather}) http://maps.google.com/?q={lat},{lon} ({acc}) {address}'
 
         if event is not None:
-            fmt = u'{username}-{device} {timestr} => {event} {waypoint} ({weather})'
+            fmt = m2s.cf.republish_event_fmt
+            if fmt is None:
+                fmt = u'{username}-{device} {timestr} => {event} {waypoint} ({weather})'
     if _type == 'waypoint':
-        fmt = u'{username}-{device} {timestr} Waypoint: {waypoint} ({rad}) {lat}/{lon}'
+        fmt = m2s.cf.republish_waypoint_fmt
+        if fmt is None:
+            fmt = u'{username}-{device} {timestr} Waypoint: {waypoint} ({rad}) {lat}/{lon}'
 
     payload = fmt.format(
             username=username,
