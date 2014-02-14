@@ -64,4 +64,10 @@ plugin_configs = {
     # 'republish_event_fmt'    : '{username}-{device} {timestr} => {event} {waypoint} ({weather})',
     # 'republish_waypoint_fmt' : '{username}-{device} {timestr} Waypoint: {waypoint} ({rad}) {lat}/{lon}',
 
+    # If store_only is not None, it's a list of topics (NO wildcards)
+    # which, if any matches, will cause the storage plugin to write
+    # the item to the database.
+
+    # store_only = [ 'owntracks/jjolie/iphone', ]
+
 }

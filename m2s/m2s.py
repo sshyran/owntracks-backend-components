@@ -247,7 +247,7 @@ def processor():
                 try:
                     # Add the JSON of the full 'item' into item
                     item['json'] = json.dumps(item)
-                    storage_module.storage(topic, item)
+                    storage_module.storage(topic, item, m2s)
                 except Exception, e:
                     logging.info("storage_plugin %s: %s" % (storage_plugin, e))
 

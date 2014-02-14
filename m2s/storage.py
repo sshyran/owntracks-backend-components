@@ -2,7 +2,7 @@
 import logging
 from dbschema import Location, mysql_db
 
-def storage(topic, item):
+def storage(topic, item, m2s=None):
     """
     Storage plugin for m2s. The function signature MUST match the
     above. `topic' contains the message topic (e.g. "owntracks/jpm/nexus")
@@ -11,6 +11,11 @@ def storage(topic, item):
 
     This function need not return anything.
     """
+
+    store_only = topic = m2s.cf.store_only
+    if store_only is not None:
+        if topic not in store_only:
+            return
 
     logging.debug("---- in storage: %s" % topic)
 
