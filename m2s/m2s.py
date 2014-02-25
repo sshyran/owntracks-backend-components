@@ -29,6 +29,7 @@ except ImportError:
     md = md5.new
 import os
 
+m2s = None
 cf = Config()
 try:
     mqtt = mosquitto.Mosquitto(cf.get('mqtt_clientid'), clean_session=False)
@@ -204,6 +205,8 @@ def processor():
     the result into persistent storage.
     """
 
+    global m2s
+
     while True:
         item = q_in.get()
 
@@ -288,6 +291,7 @@ def main():
     """
     Connect to broker, launch daemon thread(s) and listen forever.
     """
+    global m2s
 
     m2s = M2S(mqtt, cf.get('plugin_configs'))
 
