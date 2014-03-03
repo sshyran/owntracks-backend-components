@@ -12,7 +12,7 @@ def storage(topic, item, m2s=None):
     This function need not return anything.
     """
 
-    store_only = topic = m2s.cf.store_only
+    store_only = m2s.cf.store_only
     if store_only is not None:
         if topic not in store_only:
             return
