@@ -140,11 +140,13 @@ def main(argv):
                 waypoints.append(wpt)
     
     
-    root.extend(waypoints)
+    for waypoint in waypoints:
+        root.append(waypoint)
 
     if not xcode:
         root.append(track)
-        segment.extend(trackpoints)
+        for trackpoint in trackpoints:
+            segment.append(trackpoint)
     
 
     try:
