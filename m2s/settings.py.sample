@@ -60,7 +60,7 @@ plugin_configs = {
 
     # Format strings for pl-replublish plugin
     # these default to the examples given
-    # 'republish_location_fmt' : '{username}-{device} {timestr} ({weather}) http://maps.google.com/?q={lat},{lon} ({acc}) {address}',
+    # 'republish_location_fmt' : u'{username}-{device} {timestr} ({weather}) http://maps.google.com/?q={lat},{lon} ({acc}) {address}',
     # 'republish_event_fmt'    : '{username}-{device} {timestr} => {event} {waypoint} ({weather})',
     # 'republish_waypoint_fmt' : '{username}-{device} {timestr} Waypoint: {waypoint} ({rad}) {lat}/{lon}',
 
