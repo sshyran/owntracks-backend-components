@@ -14,6 +14,7 @@ except Exception, e:
 mysql_db = MySQLDatabase(cf.get('dbname', 'owntracks'),
     user=cf.get('dbuser'),
     passwd=cf.get('dbpasswd'),
+    port=cf.get('dbport', 3306),
     threadlocals=True)
 
 class MySQLModel(Model):

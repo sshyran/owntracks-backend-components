@@ -31,6 +31,7 @@ storage_plugin = 'storage.py'
 dbname = 'owntracks'          # default: "owntracks"
 dbuser = 'username'
 dbpasswd = 'password'
+dbport = 3306                 # default: 3306
 
 # Plugins
 
