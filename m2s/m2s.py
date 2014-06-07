@@ -193,6 +193,7 @@ def on_message(mosq, userdata, msg):
         'date_string'   :  time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(int(tst))),
         'rad'           : data.get('rad', None),
         'desc'          : data.get('desc', None),
+        't'             : data.get('t', None),
     }
 
     # Shove it into the queue

@@ -36,6 +36,14 @@ def plugin(item, m2s=None):
     except:
         return (None, None)
 
+    try:
+        t = item.get('t', None)
+        if t is not None:
+            if t == 'p':    # ping from iOS devices
+                return (None, None)
+    except:
+        pass
+
     if m2s.cf.republish_users and username not in m2s.cf.republish_users:
         return (None, None)
 
