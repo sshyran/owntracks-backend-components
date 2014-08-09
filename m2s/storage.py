@@ -1,6 +1,6 @@
 
 import logging
-from dbschema import Location, mysql_db
+from dbschema import Location, sql_db
 
 def storage(topic, item, m2s=None):
     """
@@ -21,9 +21,9 @@ def storage(topic, item, m2s=None):
 
     item['tst'] = item['date_string']           # replace for database
 
-    # Attempt to connect if not already connected. Takes care of MySQL 2006
+    # Attempt to connect if not already connected. For MySQL, take care of MySQL 2006
     try:
-        mysql_db.connect()
+        sql_db.connect()
     except Exception, e:
         logging.info("Cannot connect to database: %s" % (str(e)))
 
@@ -33,7 +33,7 @@ def storage(topic, item, m2s=None):
         if item['_type'] == 'waypoint':
             # Upsert
             try:
-                mysql_db.execute_sql("""
+                sql_db.execute_sql("""
                   REPLACE INTO waypoint
                   (topic, username, device, lat, lon, tst, rad, waypoint)
                   VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
