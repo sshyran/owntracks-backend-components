@@ -19,8 +19,9 @@ if(cf.get('dbengine', 'mysql') == 'postgresql'):
         port=cf.get('dbport', 5432),
         threadlocals=True)
 else:
-    sql_db = MysqlDatabase(cf.get('dbname', 'owntracks'),
+    sql_db = MySQLDatabase(cf.get('dbname', 'owntracks'),
         user=cf.get('dbuser'),
+        passwd=cf.get('dbpasswd'),
         port=cf.get('dbport', 3306),
         threadlocals=True)
 
