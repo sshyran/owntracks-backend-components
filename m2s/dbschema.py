@@ -65,6 +65,17 @@ class Waypoint(OwntracksModel):
             (('tst', ), True),
         )
 
+class Geo(OwntracksModel):
+    lat             = CharField(null=False)
+    lon             = CharField(null=False)
+    rev             = CharField(null=True)
+
+    class Meta:
+        indexes = (
+            # Create a unique index on tst
+            (('lat', 'lon', ), True),
+        )
+
 if __name__ == '__main__':
     sql_db.connect()
 
@@ -78,3 +89,7 @@ if __name__ == '__main__':
     except Exception, e:
         print str(e)
 
+    try:
+        Geo.create_table(fail_silently=True)
+    except Exception, e:
+        print str(e)
