@@ -231,7 +231,7 @@ Waypoints are added to the GPX if the database columns `weather` and `revgeo` ar
 
 ### Requirements
 
-* Mosquitto (Python)
+* [Paho MQTT](https://pypi.python.org/pypi/paho-mqtt)
 * [PeeWee](http://peewee.readthedocs.org/en/latest/). If you have PeeWee's requirements installed, use the bundled `peewee.py`, otherwise remove that and install PeeWee.
 
   [gpx]: http://en.wikipedia.org/wiki/GPS_eXchange_Format

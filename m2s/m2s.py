@@ -6,7 +6,7 @@ __copyright__ = 'Copyright 2013 Jan-Piet Mens'
 __license__   = """Eclipse Public License - v 1.0 (http://www.eclipse.org/legal/epl-v10.html)"""
 
 from config import Config
-import mosquitto
+import paho.mqtt.client as paho   # pip install paho-mqtt
 import socket
 import signal
 import logging
@@ -32,9 +32,9 @@ import os
 m2s = None
 cf = Config()
 try:
-    mqtt = mosquitto.Mosquitto(cf.get('mqtt_clientid'), clean_session=False)
+    mqtt = paho.Client(cf.get('mqtt_clientid'), clean_session=False)
 except Exception, e:
-    print"Can't create mosquitto object: %s" % (str(e))
+    print"Can't create Paho MQTT object: %s" % (str(e))
     sys.exit(2)
 
 q_in = Queue.Queue(maxsize=0)
@@ -311,9 +311,6 @@ def main():
 
     if username is not None and password is not None:
         mqtt.username_pw_set(username, password)
-
-    # Delays will be: 3, 6, 12, 24, 30, 30, ...
-    mqtt.reconnect_delay_set(delay=3, delay_max=30, exponential_backoff=True)
 
     host = cf.get('mqtt_broker', 'localhost')
     port = int(cf.get('mqtt_port', '1883'))
