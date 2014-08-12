@@ -69,5 +69,6 @@ def plugin(item, m2s=None):
     value = "%s %sC" % (w['current'], w['celsius'])
 
     data = dict(weather_data=w['blob'])
+    data = None  # don't store in JSON
 
     return  (value, data)
