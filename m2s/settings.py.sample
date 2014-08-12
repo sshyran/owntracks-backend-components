@@ -29,6 +29,7 @@ topics = [
 
 dbengine =  'mysql'
 storage_plugin = 'storage.py'
+dbhost = 'localhost'
 dbname = 'owntracks'          # default: "owntracks"
 dbuser = 'username'
 dbpasswd = 'password'

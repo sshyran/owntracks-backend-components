@@ -22,6 +22,7 @@ else:
     sql_db = MySQLDatabase(cf.get('dbname', 'owntracks'),
         user=cf.get('dbuser'),
         passwd=cf.get('dbpasswd'),
+        host=cf.get('dbhost', 'localhost'),
         port=cf.get('dbport', 3306),
         threadlocals=True)
 
