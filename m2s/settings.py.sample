@@ -73,5 +73,6 @@ plugin_configs = {
 
     'store_only' :  None,
     # 'store_only' :  [ 'owntracks/jjolie/iphone', ]
+    "greenwich_repub" : "t/",       # regular expression to sub topic to
 
 }

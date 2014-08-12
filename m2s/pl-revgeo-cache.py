@@ -41,7 +41,7 @@ def plugin(item, m2s=None):
             raise
             logging.info("Cannot store GEO in DB: %s" % (str(e)))
 
-    return  (revgeo, None)
+    return  (revgeo, dict(revgeo=revgeo))
 
 if __name__ == '__main__':
 

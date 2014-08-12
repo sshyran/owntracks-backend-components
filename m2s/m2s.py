@@ -196,6 +196,15 @@ def on_message(mosq, userdata, msg):
         't'             : data.get('t', None),
     }
 
+    if 'cog' in data:
+        item['cog'] = data['cog']
+    if 'vel' in data:
+        item['vel'] = data['vel']
+    if 'alt' in data:
+        item['alt'] = data['alt']
+    if 'dist' in data:
+        item['dist'] = data['dist']
+
     # Shove it into the queue
     q_in.put(item)
 
