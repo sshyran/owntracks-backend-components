@@ -24,7 +24,7 @@ def plugin(item, m2s=None):
     try:
         t = item.get('t', None)
         if t is not None:
-            if t == 'P':    # ping from iOS devices
+            if t == 'p':    # ping from iOS devices
                 return (None, None)
     except:
         pass
