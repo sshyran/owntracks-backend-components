@@ -1,3 +1,9 @@
+## Obsolete
+
+This code is obsolete.
+Please see [Pista](https://github.com/owntracks/pista/)
+
+
 ## Installation
 
 ```
